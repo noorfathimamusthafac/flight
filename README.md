@@ -283,3 +283,32 @@ TWILIO_ACCOUNT_SID=your_twilio_sid
 TWILIO_AUTH_TOKEN=your_twilio_token
 TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
 ```
+
+---
+
+## 🌐 100% Free Cloud Deployment Guide
+
+You can host both the Backend and Frontend online for free using **Render** and **Vercel**:
+
+### Option 1: 1-Click Render Blueprint (Backend + Frontend)
+1. Go to [Render Dashboard](https://dashboard.render.com) and click **New +** ➔ **Blueprint**.
+2. Connect your GitHub repository `noorfathimamusthafac/flight`.
+3. Render reads `render.yaml` and deploys:
+   - **`skybook-backend`**: Free Python Web Service running FastAPI.
+   - **`skybook-frontend`**: Free Static Site running Vite React with client SPA routing.
+4. Click **Apply**! Your site is live with an active URL in ~3 minutes.
+
+### Option 2: Render (Backend) + Vercel (Frontend)
+1. **Deploy Backend on Render:**
+   - Click **New +** ➔ **Web Service** ➔ connect repo.
+   - Root Directory: `backend`
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - Copy your Render backend URL (e.g. `https://skybook-backend.onrender.com`).
+2. **Deploy Frontend on Vercel:**
+   - Go to [Vercel Dashboard](https://vercel.com) ➔ **Add New Project** ➔ import repo.
+   - Root Directory: Select `frontend`.
+   - In **Environment Variables**, add:
+     - `VITE_API_URL` = `https://skybook-backend.onrender.com`
+   - Click **Deploy**!
+
