@@ -13,13 +13,17 @@
 
 ## 🎬 Live Platform Demo & Previews
 
-| Interactive Demo Video | Admin Operations Console |
+| Interactive Demo Walkthrough (Animated) | Admin Operations Console & Telemetry |
 | :---: | :---: |
-| ![SkyBook Demo Animation](demo/skybook_demo.webp) | ![Admin Operations Console](demo/admin_dashboard.png) |
+| ![SkyBook Demo Animation](demo/skybook_demo.gif) | ![Admin Operations Console](demo/05_admin_dashboard.png) |
 
-| AI Flight Rate Tracker & Search | 360° User Engagement Audit |
+| AI Flight Rate Tracker & Results | Booking Confirmed & Instant PNR Issuance |
 | :---: | :---: |
-| ![SkyBook Homepage](demo/skybook_home.png) | ![User Engagement Audit](demo/user_engagement.png) |
+| ![SkyBook Flight Results](demo/02_flight_results.png) | ![Booking Confirmed](demo/08_booking_confirmed.png) |
+
+| Multi-Passenger Checkout & Mock Payment | Admin Operations Gateway |
+| :---: | :---: |
+| ![Booking Checkout](demo/07_booking_checkout.png) | ![Admin Login Gateway](demo/04_admin_login.png) |
 
 ---
 
