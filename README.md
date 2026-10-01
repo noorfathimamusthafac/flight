@@ -11,6 +11,18 @@
 
 ---
 
+## 🎬 Live Platform Demo & Previews
+
+| Interactive Demo Video | Admin Operations Console |
+| :---: | :---: |
+| ![SkyBook Demo Animation](demo/skybook_demo.webp) | ![Admin Operations Console](demo/admin_dashboard.png) |
+
+| AI Flight Rate Tracker & Search | 360° User Engagement Audit |
+| :---: | :---: |
+| ![SkyBook Homepage](demo/skybook_home.png) | ![User Engagement Audit](demo/user_engagement.png) |
+
+---
+
 ## 📑 Table of Contents
 - [System Architecture](#-system-architecture)
 - [Comprehensive Feature & Function Demo](#-comprehensive-feature--function-demo)
