@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: skybook_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-skybook_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. FastAPI Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skybook_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/skybook_db
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-skybook_super_secret_jwt_key_interview_demo_2026}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Admin@123}
+      ADMIN_FULL_NAME: ${ADMIN_FULL_NAME:-SkyBook Administrator}
+      ADMIN_WHATSAPP: ${ADMIN_WHATSAPP:-+919876543210}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:--AQ.Ab8RN6K1ZAsefD86KqUlM_jpIr1b54ddTY_z3fb_7Wb25fFg7w}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-1.5-flash}
+      XAI_API_KEY: ${XAI_API_KEY:-}
+      GROK_MODEL: ${GROK_MODEL:-grok-beta}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-AC_mock_sandbox_sid}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-mock_auth_token}
+      TWILIO_WHATSAPP_NUMBER: ${TWILIO_WHATSAPP_NUMBER:-whatsapp:+14155238886}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # 3. React + Vite Frontend Client
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: skybook_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_BACKEND_URL: http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

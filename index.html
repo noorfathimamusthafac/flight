@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyBook | Flight Ticket Booking & Telemetry Platform</title>
+  <meta http-equiv="refresh" content="3;url=http://localhost:5173" />
+  <style>
+    body {
+      background-color: #070b14;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .card {
+      background: rgba(18, 26, 47, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 520px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #031427;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 8px;
+      margin: 6px;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    code {
+      background: rgba(0,0,0,0.4);
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #38bdf8;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div style="font-size: 40px; margin-bottom: 10px;">✈️</div>
+    <h1>SkyBook Platform</h1>
+    <p>
+      Enterprise Kerala ➔ Gulf Flight Booking Platform with Google Gemini AI rate tracking, instant unique PNR generation, and automated WhatsApp telemetry.
+    </p>
+    <p style="font-size: 13px;">
+      Run <code>docker compose up --build</code> in this directory to launch all services.
+    </p>
+    <div>
+      <a href="http://localhost:5173" class="btn">Open SkyBook Frontend (5173)</a>
+      <a href="http://localhost:8000/docs" class="btn btn-secondary">API Swagger Docs (8000)</a>
+    </div>
+  </div>
+</body>
+</html>
