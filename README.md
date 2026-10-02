@@ -274,7 +274,7 @@ tests/test_search.py::test_invalid_destination_rejected PASSED
 
 ```env
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/skybook_db
-JWT_SECRET_KEY=skybook_super_secret_jwt_key_interview_demo_2026
+JWT_SECRET_KEY=your_jwt_secret_key_here
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=Admin@123
 GEMINI_API_KEY=your_gemini_api_key_here

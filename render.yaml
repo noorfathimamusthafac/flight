@@ -18,7 +18,7 @@ services:
       - key: ADMIN_PASSWORD
         value: Admin@123
       - key: GEMINI_API_KEY
-        value: "-AQ.Ab8RN6K1ZAsefD86KqUlM_jpIr1b54ddTY_z3fb_7Wb25fFg7w"
+        sync: false
 
   # 2. React Vite Frontend Static Site (Served globally via Render CDN)
   - type: web

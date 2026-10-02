@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     )
     
     # Auth & Security
-    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "skybook_super_secret_jwt_key_interview_demo_2026")
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "skybook-dev-insecure-secret-key-change-in-production")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     
@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     ADMIN_WHATSAPP: str = os.getenv("ADMIN_WHATSAPP", "+919876543210")
     
     # LLM Settings: Supports Gemini and Grok/xAI
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "-AQ.Ab8RN6K1ZAsefD86KqUlM_jpIr1b54ddTY_z3fb_7Wb25fFg7w")
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
     XAI_API_KEY: str = os.getenv("XAI_API_KEY", "")
     GROK_MODEL: str = os.getenv("GROK_MODEL", "grok-beta")
@@ -47,7 +47,7 @@ class Settings(BaseSettings):
     ]
 
     model_config = SettingsConfigDict(
-        env_file=".env", 
+        env_file=(".env", "../.env"), 
         env_file_encoding="utf-8", 
         extra="ignore"
     )

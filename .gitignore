@@ -18,7 +18,11 @@ npm-debug.log*
 # Environment & Secrets (Never commit .env with private keys)
 .env
 .env.*
+*.env
+**/.env
+**/.env.*
 !.env.example
+!**/.env.example
 
 # IDE
 .idea/
